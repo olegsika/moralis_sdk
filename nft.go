@@ -419,8 +419,9 @@ func BuildQueryParams(params interface{}) (string, error) {
 	}
 
 	var (
-		data      = url.Values{}
-		addresses = ""
+		data          = url.Values{}
+		addresses     = ""
+		tokeAddresses = ""
 	)
 
 	for key, value := range paramsMap {
@@ -439,27 +440,39 @@ func BuildQueryParams(params interface{}) (string, error) {
 			data.Set(key, ValidateFlag(value.(string)))
 		case ModeField:
 			data.Set(key, ValidateMode(value.(string)))
-		case TokenAddressesField, AdressesField:
+		case FromDateField, ToDateField:
+			tm, err := time.Parse(time.RFC3339, value.(string))
+			if err != nil {
+				continue
+			}
+			if !tm.IsZero() {
+				data.Set(key, tm.Format(time.RFC3339))
+			}
+		case AdressesField:
 			switch val := value.(type) {
-			case []string:
+			case []interface{}:
 				for _, v := range val {
 					addresses += fmt.Sprintf("&%s=%s", key, v)
 				}
 			}
-
+		case TokenAddressesField:
+			switch val := value.(type) {
+			case []interface{}:
+				for _, v := range val {
+					tokeAddresses += fmt.Sprintf("&%s=%s", key, v)
+				}
+			}
 		default:
 			switch v := value.(type) {
 			case string:
 				data.Set(key, v)
 			case int:
 				data.Set(key, strconv.Itoa(v))
-			case time.Time:
-				data.Set(key, v.Format(time.RFC3339))
 			case float64:
 				data.Set(key, strconv.Itoa(int(v)))
 			}
 		}
 	}
 
-	return data.Encode() + addresses, nil
+	return data.Encode() + tokeAddresses + addresses, nil
 }

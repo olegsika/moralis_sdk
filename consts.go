@@ -13,6 +13,8 @@ const (
 	FilterField         = "filter"
 	FlagField           = "flag"
 	ModeField           = "mode"
+	FromDateField       = "from_date"
+	ToDateField         = "to_date"
 	TokenAddressesField = "token_addresses"
 	AdressesField       = "addresses"
 )

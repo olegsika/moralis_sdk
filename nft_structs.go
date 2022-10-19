@@ -4,9 +4,9 @@ import "time"
 
 type GetNFTTransfersByBlockParams struct {
 	Chain     string `json:"chain"`
-	Subdomain string `json:"subdomain"`
-	Cursor    string `json:"cursor"`
-	Limit     int    `json:"limit"`
+	Subdomain string `json:"subdomain,omitempty"`
+	Cursor    string `json:"cursor,omitempty"`
+	Limit     int    `json:"limit,omitempty"`
 }
 type GetNFTTransfersByBlockResponse struct {
 	BaseResponse
@@ -34,10 +34,10 @@ type GetNFTTransfersByBlockResponseResult struct {
 
 type GetWalletNFTsParams struct {
 	Chain          string   `json:"chain"`
-	Format         string   `json:"format"`
-	TokenAddresses []string `json:"token_addresses"`
-	Cursor         string   `json:"cursor"`
-	Limit          int      `json:"limit"`
+	Format         string   `json:"format,omitempty"`
+	TokenAddresses []string `json:"token_addresses,omitempty"`
+	Cursor         string   `json:"cursor,omitempty"`
+	Limit          int      `json:"limit,omitempty"`
 }
 type GetWalletNFTsResponse struct {
 	BaseResponse
@@ -66,10 +66,10 @@ type GetWalletNFTTransfersParams struct {
 	Chain     string `json:"chain"`
 	Format    string `json:"format"`
 	Direction string `json:"direction"`
-	Cursor    string `json:"cursor"`
-	FromBlock int    `json:"from_block"`
-	ToBlock   int    `json:"to_block"`
-	Limit     int    `json:"limit"`
+	Cursor    string `json:"cursor,omitempty"`
+	FromBlock int    `json:"from_block,omitempty"`
+	ToBlock   int    `json:"to_block,omitempty"`
+	Limit     int    `json:"limit,omitempty"`
 }
 type GetWalletNFTTransfersResponse struct {
 	BaseResponse
@@ -97,8 +97,8 @@ type GetWalletNFTTransfersResponseResult struct {
 
 type GetWalletNFTCollectionsParams struct {
 	Chain  string `json:"chain"`
-	Cursor string `json:"cursor"`
-	Limit  int    `json:"limit"`
+	Cursor string `json:"cursor,omitempty"`
+	Limit  int    `json:"limit,omitempty"`
 }
 type GetWalletNFTCollectionsResponse struct {
 	BaseResponse
@@ -115,14 +115,14 @@ type GetWalletNFTCollectionsResponseResult struct {
 
 type GetNFTTradesParams struct {
 	Chain       string    `json:"chain"`
-	FromBlock   int       `json:"from_block"`
-	ToBlock     int       `json:"to_block"`
-	FromDate    time.Time `json:"from_date"`
-	ToDate      time.Time `json:"to_date"`
-	ProviderURL string    `json:"provider_url"`
+	FromBlock   int       `json:"from_block,omitempty"`
+	ToBlock     int       `json:"to_block,omitempty"`
+	FromDate    time.Time `json:"from_date,omitempty"`
+	ToDate      time.Time `json:"to_date,omitempty"`
+	ProviderURL string    `json:"provider_url,omitempty"`
 	Marketplace string    `json:"marketplace"`
-	Cursor      string    `json:"cursor"`
-	Limit       int       `json:"limit"`
+	Cursor      string    `json:"cursor,omitempty"`
+	Limit       int       `json:"limit,omitempty"`
 }
 type GetNFTTradesResponse struct {
 	BaseResponse
@@ -143,8 +143,8 @@ type GetNFTTradesResponseResult struct {
 
 type GetNFTLowestPriceParams struct {
 	Chain       string `json:"chain"`
-	Days        int    `json:"days"`
-	ProviderURL string `json:"provider_url"`
+	Days        int    `json:"days,omitempty"`
+	ProviderURL string `json:"provider_url,omitempty"`
 	Marketplace string `json:"marketplace"`
 }
 type GetNFTLowestPriceResponse struct {
@@ -165,13 +165,13 @@ type SearchNFTsParams struct {
 	Format    string    `json:"format"`
 	Q         string    `json:"q"`
 	Filter    string    `json:"filter"`
-	FromBlock int       `json:"from_block"`
-	ToBlock   int       `json:"to_block"`
-	FromDate  time.Time `json:"from_date"`
-	ToDate    time.Time `json:"to_date"`
-	Addresses []string  `json:"addresses"`
-	Cursor    string    `json:"cursor"`
-	Limit     int       `json:"limit"`
+	FromBlock int       `json:"from_block,omitempty"`
+	ToBlock   int       `json:"to_block,omitempty"`
+	FromDate  time.Time `json:"from_date,omitempty"`
+	ToDate    time.Time `json:"to_date,omitempty"`
+	Addresses []string  `json:"addresses,omitempty"`
+	Cursor    string    `json:"cursor,omitempty"`
+	Limit     int       `json:"limit,omitempty"`
 }
 type SearchNFTsResponse struct {
 	BaseResponse
@@ -206,13 +206,13 @@ type SearchNFTsResponseResult struct {
 
 type GetNFTTransfersFromToBlockParams struct {
 	Chain     string    `json:"chain"`
-	FromBlock int       `json:"from_block"`
-	ToBlock   int       `json:"to_block"`
-	FromDate  time.Time `json:"from_date"`
-	ToDate    time.Time `json:"to_date"`
+	FromBlock int       `json:"from_block,omitempty"`
+	ToBlock   int       `json:"to_block,omitempty"`
+	FromDate  time.Time `json:"from_date,omitempty"`
+	ToDate    time.Time `json:"to_date,omitempty"`
 	Format    string    `json:"format"`
-	Limit     int       `json:"limit"`
-	Cursor    string    `json:"cursor"`
+	Limit     int       `json:"limit,omitempty"`
+	Cursor    string    `json:"cursor,omitempty"`
 }
 type GetNFTTransfersFromToBlockResponse struct {
 	BaseResponse
@@ -241,10 +241,10 @@ type GetNFTTransfersFromToBlockResponseResult struct {
 type GetContractNFTsParams struct {
 	Chain       string `json:"chain"`
 	Format      string `json:"format"`
-	Limit       int    `json:"limit"`
-	TotalRanges int    `json:"total_ranges"`
-	Range       int    `json:"range"`
-	Cursor      string `json:"cursor"`
+	Limit       int    `json:"limit,omitempty"`
+	TotalRanges int    `json:"total_ranges,omitempty"`
+	Range       int    `json:"range,omitempty"`
+	Cursor      string `json:"cursor,omitempty"`
 }
 type GetContractNFTsResponse struct {
 	BaseResponse
@@ -271,8 +271,8 @@ type GetContractNFTsResponseResult struct {
 type GetNFTContractTransfersParams struct {
 	Chain  string `json:"chain"`
 	Format string `json:"format"`
-	Limit  int    `json:"limit"`
-	Cursor string `json:"cursor"`
+	Limit  int    `json:"limit,omitempty"`
+	Cursor string `json:"cursor,omitempty"`
 }
 type GetNFTContractTransfersResponse struct {
 	BaseResponse
@@ -301,8 +301,8 @@ type GetNFTContractTransfersResponseResult struct {
 type GetNFTOwnersParams struct {
 	Chain  string `json:"chain"`
 	Format string `json:"format"`
-	Limit  int    `json:"limit"`
-	Cursor string `json:"cursor"`
+	Limit  int    `json:"limit,omitempty"`
+	Cursor string `json:"cursor,omitempty"`
 }
 type GetNFTOwnersResponse struct {
 	BaseResponse
@@ -375,8 +375,8 @@ type GetNFTMetadataResponse struct {
 type GetNFTTokenIDOwnersParams struct {
 	Chain  string `json:"chain"`
 	Format string `json:"format"`
-	Limit  int    `json:"limit"`
-	Cursor string `json:"cursor"`
+	Limit  int    `json:"limit,omitempty"`
+	Cursor string `json:"cursor,omitempty"`
 }
 type GetNFTTokenIDOwnersResponse struct {
 	BaseResponse
@@ -404,9 +404,9 @@ type GetNFTTokenIDOwnersResponseResult struct {
 type GetNFTTransfersParams struct {
 	Chain  string `json:"chain"`
 	Format string `json:"format"`
-	Limit  int    `json:"limit"`
-	Order  string `json:"order"`
-	Cursor string `json:"cursor"`
+	Limit  int    `json:"limit,omitempty"`
+	Order  string `json:"order,omitempty"`
+	Cursor string `json:"cursor,omitempty"`
 }
 type GetNFTTransfersResponse struct {
 	BaseResponse
