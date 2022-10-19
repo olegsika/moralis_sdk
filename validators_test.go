@@ -239,7 +239,7 @@ func TestValidateMode(t *testing.T) {
 	}
 
 	for key, expectedRes := range tCases {
-		res := ValidateFlag(key)
+		res := ValidateMode(key)
 
 		if res != expectedRes {
 			t.Errorf("expected flag %s but actual %s", expectedRes, res)

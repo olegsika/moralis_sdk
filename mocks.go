@@ -1,5 +1,6 @@
 package moralissdk
 
+// NFTClientMock mock for moralis SDK
 type NFTClientMock struct {
 	GetNFTTransfersByBlockResult *GetNFTTransfersByBlockResponse
 	GetNFTTransfersByBlockError  error

@@ -5,6 +5,7 @@ import (
 	"errors"
 )
 
+// StructToMap function convert Struct to Map
 func StructToMap(s interface{}) (map[string]interface{}, error) {
 	var myMap map[string]interface{}
 	data, _ := json.Marshal(s)
@@ -15,6 +16,7 @@ func StructToMap(s interface{}) (map[string]interface{}, error) {
 	return myMap, nil
 }
 
+// InListString function check if the string exists on slice of strings
 func InListString(entry string, list []string) bool {
 	for _, listEntry := range list {
 		if entry == listEntry {
@@ -24,6 +26,7 @@ func InListString(entry string, list []string) bool {
 	return false
 }
 
+// IsErrorEqual function check if the errors equal
 func IsErrorEqual(err, target error) bool {
 	if err == nil || target == nil {
 		return errors.Is(err, target)

@@ -1,7 +1,10 @@
 package moralissdk
 
 const (
-	NFTBaseURL   = "https://deep-index.moralis.io/api/v2/%s"
+	// NFTBaseURL Base URL
+	NFTBaseURL = "https://deep-index.moralis.io/api/v2/%s"
+
+	// APIKeyHeader Header name
 	APIKeyHeader = "X-API-Key"
 )
 

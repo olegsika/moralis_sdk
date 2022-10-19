@@ -2,6 +2,7 @@ package moralissdk
 
 import "errors"
 
+// ValidateBlockNumberOrHash validate block number or hash field
 func ValidateBlockNumberOrHash(blockNumberOrHash string) error {
 	if blockNumberOrHash == "" {
 		return errors.New("blockNumberOrHash is required")
@@ -10,6 +11,7 @@ func ValidateBlockNumberOrHash(blockNumberOrHash string) error {
 	return nil
 }
 
+// ValidateAddress validate address field
 func ValidateAddress(address string) error {
 	if address == "" {
 		return errors.New("address is required")
@@ -18,6 +20,7 @@ func ValidateAddress(address string) error {
 	return nil
 }
 
+// ValidateAddressAndTokenID validate address and token ID
 func ValidateAddressAndTokenID(address, tokenID string) error {
 	if address == "" {
 		return errors.New("address is required")
@@ -29,6 +32,7 @@ func ValidateAddressAndTokenID(address, tokenID string) error {
 	return nil
 }
 
+// ValidateChain the function validate Chain Field
 func ValidateChain(chain string) string {
 	availableChains := []string{
 		"eth",
@@ -64,6 +68,7 @@ func ValidateChain(chain string) string {
 	return chain
 }
 
+// ValidateFormat the function validate Format Field
 func ValidateFormat(format string) string {
 	availableFormats := []string{"decimal", "hex"}
 
@@ -74,6 +79,7 @@ func ValidateFormat(format string) string {
 	return format
 }
 
+// ValidateDirection the function validate Direction Field
 func ValidateDirection(direction string) string {
 	availableDirections := []string{"both", "to", "from"}
 
@@ -84,6 +90,7 @@ func ValidateDirection(direction string) string {
 	return direction
 }
 
+// ValidateMarketplace the function validate Marketplace Field
 func ValidateMarketplace(marketplace string) string {
 	availableMarketplaces := []string{"opensea"}
 
@@ -94,6 +101,7 @@ func ValidateMarketplace(marketplace string) string {
 	return marketplace
 }
 
+// ValidateFilter the function validate Filter Field
 func ValidateFilter(filter string) string {
 	availableFilters := []string{
 		"name",
@@ -113,6 +121,7 @@ func ValidateFilter(filter string) string {
 	return filter
 }
 
+// ValidateFlag the function validate Flag Field
 func ValidateFlag(flag string) string {
 	availableFlags := []string{"uri", "metadata"}
 
@@ -123,6 +132,7 @@ func ValidateFlag(flag string) string {
 	return flag
 }
 
+// ValidateMode the function validate Mode Field
 func ValidateMode(mode string) string {
 	availableModes := []string{"async", "sync"}
 

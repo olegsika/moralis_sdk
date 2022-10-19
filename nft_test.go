@@ -7,60 +7,6 @@ import (
 	"time"
 )
 
-func TestGetNFTTransfersByBlock(t *testing.T) {
-
-}
-
-func TestGetWalletNFTs(t *testing.T) {
-
-}
-func TestGetWalletNFTTransfers(t *testing.T) {
-
-}
-func TestGetWalletNFTCollections(t *testing.T) {
-
-}
-func TestGetNFTTrades(t *testing.T) {
-
-}
-func TestGetNFTLowestPrice(t *testing.T) {
-
-}
-func TestSearchNFTs(t *testing.T) {
-
-}
-
-func TestGetNFTTransfersFromToBlock(t *testing.T) {
-
-}
-func TestGetContractNFTs(t *testing.T) {
-
-}
-func TestGetNFTContractTransfers(t *testing.T) {
-
-}
-func TestGetNFTOwners(t *testing.T) {
-
-}
-func TestGetNFTContractMetadata(t *testing.T) {
-
-}
-func TestReSyncMetadata(t *testing.T) {
-
-}
-func TestSyncNFTContract(t *testing.T) {
-
-}
-func TestGetNFTMetadata(t *testing.T) {
-
-}
-func TestGetNFTTokenIDOwners(t *testing.T) {
-
-}
-func TestGetNFTTransfers(t *testing.T) {
-
-}
-
 func TestBuildQueryParams(t *testing.T) {
 	var (
 		validChain   = "sepolia"
