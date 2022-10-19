@@ -20,4 +20,7 @@ fmt.Println(res) // GetWalletNFTsResponse
 ### Hint
 
 All the structs you can see on nft_structs.go
+
 All the methods you can see on interfaces.go
+
+*This is not an official Moralis product.*
